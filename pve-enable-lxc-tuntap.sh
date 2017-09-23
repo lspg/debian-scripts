@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 read -p "CONTAINER ID ? " CTID
 echo "Creating file : /var/lib/lxc/$CTID/autodev-tuntap"
 cat <<EOF > /var/lib/lxc/$CTID/autodev-tuntap
-#!/bin/bash
+#!/bin/sh
 modprobe tun
 cd ${LXC_ROOTFS_MOUNT}/dev
 mkdir net
