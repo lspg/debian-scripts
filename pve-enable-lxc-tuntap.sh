@@ -8,6 +8,7 @@ mkdir net
 mknod net/tun c 10 200
 chmod 0666 net/tun
 EOF
+chmod +x /var/lib/lxc/$CTID/autodev
 
 STRING="lxc.cgroup.devices.allow: c 10:200 rwm"
 STRINGTEST=$(cat /etc/pve/lxc/${CTID}.conf|grep "${STRING}")
