@@ -1,4 +1,5 @@
 #!/bin/sh
+
 sh system-init.sh
 
 # CERTIFICATES

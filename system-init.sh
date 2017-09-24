@@ -1,6 +1,8 @@
 #!/bin/sh
 apt -y update && apt -y upgrade
 
+apt install screenfetch
+
 # BashRC
 sed -i 's/# export LS_OPTIONS/export LS_OPTIONS/g' ~/.bashrc
 sed -i 's/# alias l=/alias l=/g' ~/.bashrc
