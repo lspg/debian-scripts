@@ -1,6 +1,7 @@
 #!/bin/sh
 
-sh system-init.sh
+wget -O /root/system-init.sh https://raw.githubusercontent.com/lspg/debian-scripts/master/system-init.sh
+sh /root/system-init.sh
 
 # CERTIFICATES
 apt -y install openvpn easy-rsa
