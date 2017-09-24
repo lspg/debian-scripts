@@ -26,15 +26,21 @@ cd /etc/openvpn/easy-rsa/
 . ./vars
 ./clean-all
 
+echo "
+>>> Building CA"
 ./build-ca
 cp keys/ca.crt /etc/openvpn/
 
 ./build-dh
 cp keys/dh2048.pem /etc/openvpn/
 
+echo "
+>>> Building SERVER CERTIFICATE"
 ./build-key-server server
 cp keys/server.crt keys/server.key /etc/openvpn/
 
+echo "
+>>> Building CLIENT CERTIFICATE"
 ./build-key client
 cp keys/client.crt keys/client.key /etc/openvpn/
 
