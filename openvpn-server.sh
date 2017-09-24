@@ -56,7 +56,7 @@ apt -y install bridge-utils
 #ip link show
 
 STRINGTEST=$(cat /etc/network/interfaces|grep "iface br0 inet static")
-if [ ${STRINGTEST} == "" ]; then
+if [ "${STRINGTEST}" = "" ]; then
 	read -p "INTERFACE TO BRIDGE ? " INT
 
 	echo "

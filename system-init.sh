@@ -1,7 +1,7 @@
 #!/bin/sh
-apt -y update && apt -y upgrade
+apt update && apt -y upgrade
 
-apt install screenfetch
+apt -y install screenfetch
 
 # BashRC
 sed -i 's/# export LS_OPTIONS/export LS_OPTIONS/g' ~/.bashrc
