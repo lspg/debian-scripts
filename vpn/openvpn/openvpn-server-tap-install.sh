@@ -1,7 +1,5 @@
 #!/bin/sh
-apt update && apt upgrade && apt -y install curl
-#wget -O - https://raw.githubusercontent.com/lspg/debian-scripts/master/common/init.sh | sh
-sh <(curl -fsSL https://raw.githubusercontent.com/lspg/debian-scripts/master/common/init.sh)
+wget -O - https://raw.githubusercontent.com/lspg/debian-scripts/master/common/init.sh | sh
 
 # CERTIFICATES
 apt -y install openvpn easy-rsa
@@ -104,6 +102,7 @@ done
 
 echo 'export FQDN="${FQDN}"' >> /etc/openvpn/scripts/vars
 sed -i "s/DOMAIN vpn.my.domain/DOMAIN vpn.my.domain ${FQDN}/g" /etc/openvpn/server.conf
+sed -i "s/remote vpn.my.domain/remote ${FQDN}/g" /etc/openvpn/client.conf
 
 if command -v systemctl 2>/dev/null; then
 	systemctl enable openvpn-server@server
