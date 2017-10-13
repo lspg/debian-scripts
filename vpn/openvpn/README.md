@@ -1,6 +1,7 @@
 # On Proxmox host
 
 * Create an LXC container with 2 NICs:
+
 ** eth0 on vmbr0, Public IP
 ** eth1 on vmbr3, VPN LAN
 
@@ -15,5 +16,5 @@ pct enter $CTID
 * In the VM
 ```
 apt update; apt -y install ca-certificates
-wget -O - https://github.com/lspg/debian-scripts/blob/master/vpn/openvpn/openvpn-server-tap-install.sh | sh
+wget -O - https://raw.githubusercontent.com/lspg/debian-scripts/master/vpn/openvpn/openvpn-server-tap-install.sh | sh
 ```
