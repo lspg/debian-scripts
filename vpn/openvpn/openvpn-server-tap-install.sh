@@ -1,5 +1,4 @@
 #!/bin/sh
-wget -O - https://raw.githubusercontent.com/lspg/debian-scripts/master/common/init.sh | sh
 
 # CERTIFICATES
 apt -y install openvpn easy-rsa
