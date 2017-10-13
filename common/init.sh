@@ -10,12 +10,15 @@ apt update; apt -y upgrade
 
 # Screenfetch
 apt -y install screenfetch
-echo "screenfetch" >> ~/.bashrc
+STRING="screenfetch"
+STRINGTEST=$(cat ~/.bashrc|grep "${STRING}")
+if [ "$STRINGTEST" == "" ]; then
+	echo ${STRING} >> ~/.bashrc
+else
 
 # BashRC
 sed -i 's/# export LS_OPTIONS/export LS_OPTIONS/g' ~/.bashrc
 sed -i 's/# alias l=/alias l=/g' ~/.bashrc
-source ~/.bashrc
 
 # Aliases
 cat <<EOF > ~/.aliases
@@ -25,7 +28,12 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 EOF
-echo "source ~/.aliases" >> ~/.bashrc
+STRING="source ~/.aliases"
+STRINGTEST=$(cat ~/.bashrc|grep "${STRING}")
+if [ "$STRINGTEST" == "" ]; then
+	echo ${STRING} >> ~/.bashrc
+else
+
 . ~/.bashrc
 
 # Clock sync
