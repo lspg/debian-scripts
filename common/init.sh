@@ -12,7 +12,7 @@ apt update; apt -y upgrade
 apt -y install screenfetch
 STRING="screenfetch"
 STRINGTEST=$(cat ~/.bashrc|grep "${STRING}")
-if [ "$STRINGTEST" == "" ]; then
+if [ ${#STRINGTEST} -eq 0 ]; then
 	echo ${STRING} >> ~/.bashrc
 fi
 
@@ -30,7 +30,7 @@ alias egrep='egrep --color=auto'
 EOF
 STRING="source ~/.aliases"
 STRINGTEST=$(cat ~/.bashrc|grep "${STRING}")
-if [ "$STRINGTEST" == "" ]; then
+if [ ${#STRINGTEST} -eq 0 ]; then
 	echo ${STRING} >> ~/.bashrc
 fi
 
