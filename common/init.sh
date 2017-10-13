@@ -1,7 +1,16 @@
 #!/bin/sh
-apt update && apt -y upgrade
 
+# Locales and Timezone
+sed -i 's/# en_US.UTF-8/en_US.UTF-8/g' /etc/locale.gen
+sed -i 's/# fr_FR.UTF-8/fr_FR.UTF-8/g' /etc/locale.gen
+locale-gen && dpkg-reconfigure locales tzdata
+
+# System upgrade
+apt update; apt -y upgrade
+
+# Screenfetch
 apt -y install screenfetch
+echo "screenfetch" >> ~/.bashrc
 
 # BashRC
 sed -i 's/# export LS_OPTIONS/export LS_OPTIONS/g' ~/.bashrc
@@ -18,11 +27,6 @@ alias egrep='egrep --color=auto'
 EOF
 echo "source ~/.aliases" >> ~/.bashrc
 source ~/.bashrc
-
-# Locales and Timezone
-sed -i 's/# en_US.UTF-8/en_US.UTF-8/g' /etc/locale.gen
-sed -i 's/# fr_FR.UTF-8/fr_FR.UTF-8/g' /etc/locale.gen
-locale-gen && dpkg-reconfigure locales tzdata
 
 # Clock sync
 apt -y install ntp ntpdate
