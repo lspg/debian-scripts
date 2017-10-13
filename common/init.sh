@@ -14,7 +14,7 @@ STRING="screenfetch"
 STRINGTEST=$(cat ~/.bashrc|grep "${STRING}")
 if [ "$STRINGTEST" == "" ]; then
 	echo ${STRING} >> ~/.bashrc
-else
+fi
 
 # BashRC
 sed -i 's/# export LS_OPTIONS/export LS_OPTIONS/g' ~/.bashrc
@@ -32,7 +32,7 @@ STRING="source ~/.aliases"
 STRINGTEST=$(cat ~/.bashrc|grep "${STRING}")
 if [ "$STRINGTEST" == "" ]; then
 	echo ${STRING} >> ~/.bashrc
-else
+fi
 
 . ~/.bashrc
 
