@@ -85,7 +85,7 @@ while true; do
 			*  ) break;;
 	esac
 done
-echo 'export VPN_NAME="${VPN_NAME}"' >> /etc/openvpn/scripts/vars
+echo "export VPN_NAME='${VPN_NAME}'" >> /etc/openvpn/scripts/vars
 
 PUBLIC_IP="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
 if [ ${#PUBLIC_IP} -gt 0 ]; then
@@ -100,7 +100,7 @@ while true; do
 	esac
 done
 
-echo 'export FQDN="${FQDN}"' >> /etc/openvpn/scripts/vars
+echo "export FQDN='${FQDN}'" >> /etc/openvpn/scripts/vars
 sed -i "s/DOMAIN vpn.my.domain/DOMAIN vpn.my.domain ${FQDN}/g" /etc/openvpn/server.conf
 sed -i "s/remote vpn.my.domain/remote ${FQDN}/g" /etc/openvpn/client.conf
 
