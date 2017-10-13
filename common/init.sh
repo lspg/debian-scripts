@@ -26,7 +26,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 EOF
 echo "source ~/.aliases" >> ~/.bashrc
-source ~/.bashrc
+. ~/.bashrc
 
 # Clock sync
 apt -y install ntp ntpdate
