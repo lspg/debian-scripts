@@ -28,7 +28,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 EOF
-STRING="source ~/.aliases"
+STRING=". ~/.aliases"
 STRINGTEST=$(cat ~/.bashrc|grep "${STRING}")
 if [ ${#STRINGTEST} -eq 0 ]; then
 	echo ${STRING} >> ~/.bashrc
