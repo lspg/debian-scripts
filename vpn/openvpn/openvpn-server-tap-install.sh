@@ -27,15 +27,15 @@ mkdir /etc/openvpn/certs /etc/openvpn/ccd /etc/openvpn/log /etc/openvpn/clients 
 
 echo -e "
 >>> Starting creation of CA"
-./build-ca
+sh /etc/openvpn/easy-rsa/build-ca
 cp keys/ca.crt /etc/openvpn/certs/.
 
-./build-dh
+sh /etc/openvpn/easy-rsa/build-dh
 cp keys/dh2048.pem /etc/openvpn/certs/.
 
 echo -e "
 >>> Starting creation of SERVER CERTIFICATE"
-./build-key-server server
+sh /etc/openvpn/easy-rsa/build-key-server server
 cp keys/server.crt keys/server.key /etc/openvpn/certs/.
 
 cd /etc/openvpn
