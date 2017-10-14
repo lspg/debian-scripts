@@ -3,12 +3,10 @@
 while true; do
 	read -p "Execute system init script ? [y/N] " yn
 		case $FQDN in
-			y|Y    ) wget -O - https://raw.githubusercontent.com/lspg/debian-scripts/master/common/init.sh | sh; break;;
+			y|Y    ) sh <(curl -s https://raw.githubusercontent.com/lspg/debian-scripts/master/vpn/openvpn/openvpn-server-tap-install.sh); break;;
 			n|N|"" ) break;;
 	esac
 done
-
-wget -O - https://raw.githubusercontent.com/lspg/debian-scripts/master/common/init.sh | sh
 
 # CERTIFICATES
 apt -y install openvpn easy-rsa
