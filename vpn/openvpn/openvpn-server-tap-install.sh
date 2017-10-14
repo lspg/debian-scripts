@@ -3,7 +3,7 @@
 while true; do
 	read -p "Execute system init script ? [y/N] " yn
 		case $yn in
-			y|Y    ) CMD="sh <(curl -s https://raw.githubusercontent.com/lspg/debian-scripts/master/vpn/openvpn/openvpn-server-tap-install.sh)"; $CMD; break;;
+			y|Y    ) CMD="sh <(/usr/bin/curlcurl -s https://raw.githubusercontent.com/lspg/debian-scripts/master/vpn/openvpn/openvpn-server-tap-install.sh)"; eval $CMD; break;;
 			n|N|"" ) break;;
 	esac
 done
