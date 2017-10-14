@@ -5,12 +5,12 @@ apt -y install openvpn easy-rsa
 mkdir /etc/openvpn/easy-rsa/
 cp -r /usr/share/easy-rsa/* /etc/openvpn/easy-rsa/
 
-read -p "COUNTRY ? " COUNTRY
-read -p "PROVINCE ? " PROVINCE
-read -p "CITY ? " CITY
-read -p "ORGANIZATION ? " ORG
-read -p "EMAIL ? " EMAIL
-read -p "ORGANIZATION UNIT ? " OU
+read -p 'COUNTRY ? ' COUNTRY
+read -p 'PROVINCE ? ' PROVINCE
+read -p 'CITY ? ' CITY
+read -p 'ORGANIZATION ? ' ORG
+read -p 'EMAIL ? ' EMAIL
+read -p 'ORGANIZATION UNIT ? ' OU
 
 sed -i "s/KEY_COUNTRY=\"US\"/KEY_COUNTRY=\"${COUNTRY}\"/g" /etc/openvpn/easy-rsa/vars
 sed -i "s/KEY_PROVINCE=\"CA\"/KEY_PROVINCE=\"${PROVINCE}\"/g" /etc/openvpn/easy-rsa/vars
