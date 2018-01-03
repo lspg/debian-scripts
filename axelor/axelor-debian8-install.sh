@@ -2,7 +2,7 @@
 
 # Usage :
 # Install a fresh Debian Jessie, then execute following shell command as root user
-# wget --no-check-certificate -O - https://gist.githubusercontent.com/lspg/018425712d6d437def68922c2717f8af/raw | bash
+# wget --no-check-certificate -O - https://github.com/lspg/debian-scripts/raw/master/axelor/axelor-debian8-install.sh | bash
 
 #############
 # Functions #
