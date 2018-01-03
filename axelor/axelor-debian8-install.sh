@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Axelor PVE Backups
-# 1. Clean debian, network configured with public failover ip
-# 2. Oracle JDK 7 installed (1.7.0_80)
-
 # Usage :
 # Install a fresh Debian Jessie, then execute following shell command as root user
 # wget --no-check-certificate -O - https://gist.githubusercontent.com/lspg/018425712d6d437def68922c2717f8af/raw | bash
