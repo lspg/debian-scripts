@@ -16,5 +16,6 @@ pct enter $CTID
 * In the VM
 ```
 apt update; apt -y install ca-certificates
+wget -O - https://raw.githubusercontent.com/lspg/debian-scripts/master/common/init.sh | sh
 wget -O - https://raw.githubusercontent.com/lspg/debian-scripts/master/vpn/openvpn/openvpn-server-tap-install.sh | sh
 ```
